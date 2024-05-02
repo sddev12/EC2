@@ -46,14 +46,5 @@ resource "aws_instance" "main" {
   key_name        = var.key_name
   security_groups = [aws_security_group.instance_sg.id]
 
-  # user_data = <<-EOF
-  #            #!/bin/bash
-  #            sudo apt-get update
-  #            mkdir -p /home/ubuntu/.ssh
-  #            echo "${data.local_file.public_key.content} >> /home/ubuntu/.ssh/authorized_keys"
-  #            chmod 700 ~/.ssh
-  #            chmod 600 ~/.ssh/authorized_keys
-  #            EOF
-
   tags = var.tags
 }
