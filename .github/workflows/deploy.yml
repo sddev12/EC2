@@ -14,5 +14,5 @@ jobs:
       - name: Generate an ssh keypair
         run: ssh-keygen -t rsa -d 4096 -f ./terraform/data/ec2
 
-      -name:
+      - name: Output private key
         run: cat ./terraform/data/ec2
