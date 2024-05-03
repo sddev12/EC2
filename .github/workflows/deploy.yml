@@ -4,21 +4,20 @@ on:
   workflow_dispatch:
 
 jobs:
-  Terraform:
+  Generate-SSH-Keypair:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
 
-      - name: Print working dir
-        run: pwd
+      - name: Make data dir
+        run: mkdir ./terraform/data
 
-      - name: ls
-        run: ls
-
-      # Runs a single command using the runners shell
       - name: Generate an ssh keypair
         run: ssh-keygen -t rsa -b 4096 -f /terraform/data/ec2 -N ${{ secrets.SSH_KEY_PASSPHRASE  }}
 
       - name: Output private key
         run: cat ./terraform/data/ec2
+
+      - name:
+        run: cat ./terraform/data/ec2.pub
