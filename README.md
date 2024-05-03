@@ -1,3 +1,5 @@
+[![Deploy EC2](https://github.com/sddev12/EC2/actions/workflows/deploy.yml/badge.svg?branch=main)](https://github.com/sddev12/EC2/actions/workflows/deploy.yml)
+
 # EC2
 
 Provisions an EC2 instance with internet access and ssh configured.
