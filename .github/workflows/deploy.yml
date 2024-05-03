@@ -12,7 +12,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Generate an ssh keypair
-        run: ssh-keygen -t rsa -d 4096 -f ./terraform/data/ec2
+        run: ssh-keygen -t rsa -b 4096 -f ./terraform/data/ec2
 
       - name: Output private key
         run: cat ./terraform/data/ec2
