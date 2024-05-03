@@ -14,10 +14,10 @@ jobs:
         run: mkdir ./terraform/data
 
       - name: Generate an ssh keypair
-        run: ssh-keygen -t rsa -b 4096 -f /terraform/data/ec2 -N ${{ secrets.SSH_KEY_PASSPHRASE  }}
+        run: ssh-keygen -t rsa -b 4096 -f ./terraform/data/ec2 -N ${{ secrets.SSH_KEY_PASSPHRASE  }}
 
       - name: Output private key
         run: cat ./terraform/data/ec2
 
-      - name:
+      - name: Output public key
         run: cat ./terraform/data/ec2.pub
