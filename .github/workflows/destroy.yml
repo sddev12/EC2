@@ -24,6 +24,7 @@ jobs:
           retention-days: 1
 
   Terraform:
+    needs: [Bootstrap]
     runs-on: ubuntu-latest
 
     steps:
