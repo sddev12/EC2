@@ -10,11 +10,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Bootstrap
-        run: |
-          mkdir ./terraform/data \
-          ls ./terraform \
-          echo "" > ./terraform/data/ec2.pub
+      - name: Make data dir
+        run: mkdir ./terraform/data
+
+      - name: List terraform dir
+        run: ls ./terraform
+
+      - name: Make empty .pub file
+        run: echo "" >> ./terraform/data/ec2.pub
 
       - name: Create env vars
         run: |
