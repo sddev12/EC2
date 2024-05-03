@@ -4,16 +4,35 @@ on:
   workflow_dispatch:
 
 jobs:
+  Bootstrap:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create data dir
+        run: mkdir ./terraform/data \
+
+      - name: Create empty .pub file
+        run: echo "" > ./terraform/data/ec2.pub
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ec2.pub
+          path: ./terraform/data/ec2.pub
+          overwrite: true
+          retention-days: 1
+
   Terraform:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
 
-      - name: Bootstrap
-        run: |
-          mkdir ./terraform/data \
-          echo "" >> ./terraform/data/ec2.pub
+      - uses: actions/download-artifact@v4
+        with:
+          name: ec2.pub
+          path: ./terraform/data/
 
       - name: Create env vars
         run: |
