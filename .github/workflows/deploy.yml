@@ -50,8 +50,9 @@ jobs:
       - name: Terraform init
         id: init
         run: |
-          terraform init \
-          -chdir=./terraform \
+          terraform \ 
+          -chdir=./terraform \ 
+          init \
           -backend-config="bucket=${{ vars.BACKEND_CONFIG_BUCKET  }}" \
           -backend-config="key=${{ vars.BACKEND_CONFIG_KEY  }}" \
           -backend-config="region=${{ vars.BACKEND_CONFIG_REGION  }}" \
@@ -60,13 +61,15 @@ jobs:
       - name: Terraform plan
         id: plan
         run: |
-          terraform plan \
+          terraform \
           -chdir=./terraform \
+          plan \
           -out=tfplan.out
 
       - name: Teraform apply
         id: apply
         run: |
-          terraform apply \
+          terraform \
           -chdir=./terraform \
+          apply \
           tfplan.out
