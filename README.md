@@ -1,4 +1,4 @@
-[![Deploy EC2](https://github.com/sddev12/EC2/actions/workflows/deploy.yml/badge.svg?branch=main)](https://github.com/sddev12/EC2/actions/workflows/deploy.yml)
+[![Deploy EC2](https://github.com/sddev12/EC2/actions/workflows/deploy.yml/badge.svg?branch=main)](https://github.com/sddev12/EC2/actions/workflows/deploy.yml) [![Destroy EC2](https://github.com/sddev12/EC2/actions/workflows/destroy.yml/badge.svg?branch=main)](https://github.com/sddev12/EC2/actions/workflows/destroy.yml)
 
 # EC2
 
