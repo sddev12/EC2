@@ -10,6 +10,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Print working dir
+        run: pwd
+
+      - name: ls
+        run: ls
+
       # Runs a single command using the runners shell
       - name: Generate an ssh keypair
         run: ssh-keygen -t rsa -b 4096 -f ./terraform/data/ec2
