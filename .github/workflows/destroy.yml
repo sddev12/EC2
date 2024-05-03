@@ -13,7 +13,7 @@ jobs:
       - name: Bootstrap
         run: |
           mkdir ./terraform/data \
-          ls ./terraform
+          ls ./terraform \
           echo "" > ./terraform/data/ec2.pub
 
       - name: Create env vars
