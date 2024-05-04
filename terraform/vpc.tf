@@ -1,12 +1,12 @@
 resource "aws_vpc" "ec2" {
-  cidr_block = "10.0.0.0/16"
+  cidr_block = "10.0.0.0/28"
 
   tags = var.tags
 }
 
 resource "aws_subnet" "public" {
   vpc_id     = aws_vpc.ec2.id
-  cidr_block = "10.0.1.0/24"
+  cidr_block = "10.0.1.0/29"
 
   tags = var.tags
 }
